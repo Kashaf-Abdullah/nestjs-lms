@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
+import { CourseModule } from './course/course.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ConfigModule } from '@nestjs/config';
       process.env.MONGODB_URI as string,
       // 'mongodb+srv://admin:0xXWZjmlJ9nw1Tlu@cluster0.gk9kpwa.mongodb.net/?appName=Cluster0',
     ),
+    CourseModule,
   ],
   controllers: [AppController],
   providers: [AppService],
